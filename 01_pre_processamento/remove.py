@@ -1,3 +1,10 @@
+"""
+Script: remove.py
+Finalidade: Filtrar estações por distância epicentral e exportar coordenadas SAC para CSV.
+Autor: JP.Souza
+Data: Março de 2026
+Projeto: Inversão de Mecanismo Focal pelo Método CAP
+"""
 import os
 import shutil
 import csv
@@ -24,7 +31,6 @@ with open('coordenads.csv', 'w', newline='') as arquivo_csv:
 					escritor_csv.writerow(dados)
 				else:
 					shutil.move(os.path.join(pasta, arquivo), '/home/joao/Documentos/IC/IC/INV/DATA/DATA/OUTSIDE')
-	    
 			else: 
 				dados = st[0].stats.sac.knetwk, st[0].stats.sac.stla, st[0].stats.sac.stlo
 				escritor_csv.writerow(dados)
